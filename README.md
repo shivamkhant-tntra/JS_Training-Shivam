@@ -10,3 +10,6 @@ Grade Distribution:
   In this,I used the student array and ran a for each loop and in that use else if condtions to find and store the frequency of the grades.
 Students needing retake:
   In this, I used the students array and used a foreach loop to find student name with less than 60 score using if condition.
+
+  <img width="1441" height="390" alt="image" src="https://github.com/user-attachments/assets/75c49d89-19d1-497f-aba2-2203df7a1068" />
+
