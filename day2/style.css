@@ -1,0 +1,30 @@
+#product-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.product-card img {
+  height: 150px;
+  width: 150px;
+  padding: 3rem;
+}
+
+.cart-section table {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.cart-section table tr,
+.cart-section table td {
+  border: 1px solid black;
+}
+
+#subtotal-cell {
+  text-align: right;
+}
