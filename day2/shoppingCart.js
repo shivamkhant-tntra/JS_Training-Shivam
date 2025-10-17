@@ -1,7 +1,3 @@
-fetch("https://fakestoreapi.com/products")
-  .then((response) => response.json())
-  .then((data) => displayProducts(data));
-
 const productSection = document.getElementById("product-section");
 const cartSection = document.querySelector(".cart-section");
 const cartTable = document.getElementById("cart-table");
@@ -10,6 +6,10 @@ const subtotalRow = document.getElementById("subtotal-row");
 const quantityDiscount = document.getElementById("discount-field");
 const priceDiscount = document.getElementById("pricediscount-field");
 const finalTotal = document.getElementById("finaltotal-field");
+
+fetch("https://fakestoreapi.com/products")
+  .then((response) => response.json())
+  .then((data) => displayProducts(data));
 
 let cart = {};
 
@@ -78,7 +78,6 @@ function executeCart(productData, newRow) {
     itemRow.appendChild(priceCell);
     itemRow.appendChild(quantityCell);
     itemRow.appendChild(totalCell);
-    // cartTable.appendChild(itemRow);
     subtotalRow.parentNode.insertBefore(itemRow, subtotalRow);
   } else {
     document.getElementById(productData.id).innerHTML = productData.quantity;
@@ -92,12 +91,6 @@ function calculateCart() {
   let qDisct = 0;
   let pDisct = 0;
   let fTotal = 0;
-  // const priceRow = document.createElement("tr");
-  // const emptyCell = document.createElement("td");
-  // const emptyCell2 = document.createElement("td");
-  // const emptyCell3 = document.createElement("td");
-  // emptyCell3.textContent = "Total";
-  // const subtotalCell = document.createElement("td");
 
   Object.values(cart).forEach((item) => {
     sum = sum + item.price * item.quantity;
@@ -112,20 +105,9 @@ function calculateCart() {
   if (sum > 500) {
     pDisct = (sum * 0.05).toFixed(2);
   }
-  fTotal = sum - qDisct - pDisct;
+  fTotal = (sum - qDisct - pDisct).toFixed(2);
 
   quantityDiscount.innerHTML = qDisct;
   priceDiscount.innerHTML = pDisct;
   finalTotal.innerHTML = fTotal;
-
-  // priceRow.appendChild(emptyCell);
-  // priceRow.appendChild(emptyCell2);
-  // priceRow.appendChild(emptyCell3);
-  // if (cart) {
-  //   subtotalCell.textContent = sum;
-  //   priceRow.appendChild(subtotalCell);
-  // } else {
-  //   subtotalCell.innerHTML = sum;
-  // }
-  // cartTable.appendChild(priceRow);
 }
