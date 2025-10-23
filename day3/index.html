@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="theme">
+      <button id="themeButton" onclick="toggleTheme()">Toggle theme</button>
+    </div>
+    <form onsubmit="validateForm(event)">
+      <h2>Form</h2>
+      <p id="validationMessage" class="validationMessage"></p>
+      <label for="nameField">Name:</label>
+      <input type="text" id="nameField" />
+      <p class="validationMessage" id="nameMessage"></p>
+
+      <label for="emailField">Email:</label>
+      <input type="text" id="emailField" />
+      <p class="validationMessage" id="emailMessage"></p>
+
+      <label for="ageField">Age:</label>
+      <input type="text" id="ageField" />
+      <p class="validationMessage" id="ageMessage"></p>
+
+      <label for="dobField">Date of birth:</label>
+      <input type="date" id="dobField" />
+      <p class="validationMessage" id="dobMessage"></p>
+
+      <div class="gender-field">
+        <label>Gender:</label>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male" />
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" />
+      </div>
+      <p class="validationMessage" id="genderMessage"></p>
+
+      <div class="hobby-field">
+        <label>Hobbies:</label>
+        <label for="coding">Coding</label>
+        <input
+          type="checkbox"
+          name="checkbox-group"
+          value="coding"
+          id="coding"
+        />
+        <label for="reading">Reading</label>
+        <input
+          type="checkbox"
+          name="checkbox-group"
+          value="reading"
+          id="reading"
+        />
+        <label for="travelling">Travelling</label>
+        <input
+          type="checkbox"
+          name="checkbox-group"
+          value="travelling"
+          id="travelling"
+        />
+        <label for="music">Music</label>
+        <input type="checkbox" name="checkbox-group" value="music" id="music" />
+      </div>
+      <p class="validationMessage" id="hobbyMessage"></p>
+
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="">select country</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Poland">Poland</option>
+        <option value="Italy">Italy</option>
+        <option value="France">France</option>
+        <option value="Monaco">Monaco</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Russia">Russia</option>
+        <option value="China">China</option>
+      </select>
+      <p class="validationMessage" id="countryMessage"></p>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <section id="submissions">
+      <ul id="dataList"></ul>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
